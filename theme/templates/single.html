@@ -1,0 +1,36 @@
+<!--
+	WP GEARS NOTE:
+	This template displays one individual blog post. The Post Title, Post Date,
+	Featured Image, and Post Content blocks automatically read data from the
+	post currently being viewed.
+-->
+
+<!-- wp:template-part {"slug":"header","tagName":"header"} /-->
+
+<!-- wp:group {"tagName":"main","layout":{"type":"constrained"}} -->
+<main class="wp-block-group">
+
+	<!-- The post title is the main heading, so it uses level 1. -->
+	<!-- wp:post-title {"level":1} /-->
+	<!-- wp:post-date /-->
+	<!-- WordPress outputs this block when the post has a featured image. -->
+	<!-- wp:post-featured-image {"aspectRatio":"16/9","scale":"cover"} /-->
+
+	<!-- The editor owns the article content; the theme controls its placement. -->
+	<!-- wp:post-content {"layout":{"type":"constrained"}} /-->
+
+	<!-- Show the categories and tags assigned to this post. -->
+	<!-- wp:group {"layout":{"type":"flex","flexWrap":"wrap"}} -->
+	<div class="wp-block-group">
+		<!-- wp:post-terms {"term":"category"} /-->
+		<!-- wp:post-terms {"term":"post_tag"} /-->
+	</div>
+	<!-- /wp:group -->
+
+	<!-- Keep the native comments block available; WordPress handles its settings. -->
+	<!-- wp:post-comments /-->
+
+</main>
+<!-- /wp:group -->
+
+<!-- wp:template-part {"slug":"footer","tagName":"footer"} /-->

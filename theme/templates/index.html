@@ -1,0 +1,60 @@
+<!--
+	WP GEARS NOTE:
+	index.html is required for every block theme. WordPress uses it as the
+	fallback when a more specific template does not exist.
+-->
+
+<!-- Reuse the shared header. -->
+<!-- wp:template-part {"slug":"header","tagName":"header"} /-->
+
+<!-- Main is the unique primary content landmark on this page. -->
+<!-- wp:group {"tagName":"main","layout":{"type":"constrained"}} -->
+<main class="wp-block-group">
+
+	<!--
+		The inherited query uses the results WordPress prepared for the current URL.
+		This lets the same structure work for the posts index and fallback views.
+	-->
+	<!-- wp:query {"query":{"inherit":true},"layout":{"type":"default"}} -->
+	<div class="wp-block-query">
+
+		<!-- WordPress repeats these blocks once for each post in the query. -->
+		<!-- wp:post-template {"layout":{"type":"default"}} -->
+
+			<!-- Group related post information so it can be edited and styled together. -->
+			<!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|20"}},"layout":{"type":"constrained"}} -->
+			<div class="wp-block-group">
+
+				<!-- Use H2 because this is a post title inside a list, not the page title. -->
+				<!-- wp:post-title {"isLink":true,"level":2} /-->
+				<!-- wp:post-date {"isLink":true} /-->
+				<!-- An excerpt keeps listing pages shorter than the full article. -->
+				<!-- wp:post-excerpt {"moreText":"Read more"} /-->
+
+			</div>
+			<!-- /wp:group -->
+
+		<!-- /wp:post-template -->
+
+		<!-- Pagination belongs inside the Query Loop it controls. -->
+		<!-- wp:query-pagination {"layout":{"type":"flex","justifyContent":"space-between"}} -->
+			<!-- wp:query-pagination-previous /-->
+			<!-- wp:query-pagination-numbers /-->
+			<!-- wp:query-pagination-next /-->
+		<!-- /wp:query-pagination -->
+
+		<!-- WordPress shows this only when the query has no results. -->
+		<!-- wp:query-no-results -->
+			<!-- wp:paragraph -->
+			<p>No posts were found.</p>
+			<!-- /wp:paragraph -->
+		<!-- /wp:query-no-results -->
+
+	</div>
+	<!-- /wp:query -->
+
+</main>
+<!-- /wp:group -->
+
+<!-- Reuse the shared footer. -->
+<!-- wp:template-part {"slug":"footer","tagName":"footer"} /-->
