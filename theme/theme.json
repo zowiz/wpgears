@@ -1,0 +1,83 @@
+{
+	"$schema": "https://schemas.wp.org/wp/6.6/theme.json",
+	"version": 3,
+	"settings": {
+		"appearanceTools": true,
+		"color": {
+			"defaultPalette": false,
+			"defaultGradients": false,
+			"palette": [
+				{ "slug": "base", "color": "#ffffff", "name": "Base" },
+				{ "slug": "contrast", "color": "#171717", "name": "Contrast" },
+				{ "slug": "muted", "color": "#6b7280", "name": "Muted" },
+				{ "slug": "accent", "color": "#2563eb", "name": "Accent" }
+			]
+		},
+		"layout": {
+			"contentSize": "720px",
+			"wideSize": "1200px"
+		},
+		"spacing": {
+			"units": ["%", "px", "em", "rem", "vw"],
+			"spacingSizes": [
+				{ "slug": "10", "size": "0.5rem", "name": "Extra Small" },
+				{ "slug": "20", "size": "0.75rem", "name": "Small" },
+				{ "slug": "30", "size": "1rem", "name": "Medium" },
+				{ "slug": "40", "size": "1.5rem", "name": "Large" },
+				{ "slug": "50", "size": "2rem", "name": "Extra Large" },
+				{ "slug": "60", "size": "3rem", "name": "2X Large" }
+			]
+		},
+		"typography": {
+			"fluid": true,
+			"fontFamilies": [
+				{
+					"slug": "system",
+					"name": "System Sans Serif",
+					"fontFamily": "system-ui, -apple-system, BlinkMacSystemFont, sans-serif"
+				}
+			],
+			"fontSizes": [
+				{ "slug": "small", "name": "Small", "size": "0.875rem", "fluid": false },
+				{ "slug": "medium", "name": "Medium", "size": "1rem", "fluid": { "min": "1rem", "max": "1.125rem" } },
+				{ "slug": "large", "name": "Large", "size": "1.5rem", "fluid": { "min": "1.25rem", "max": "1.75rem" } },
+				{ "slug": "x-large", "name": "Extra Large", "size": "2rem", "fluid": { "min": "1.75rem", "max": "2.5rem" } },
+				{ "slug": "xx-large", "name": "2X Large", "size": "2.75rem", "fluid": { "min": "2.25rem", "max": "3.5rem" } }
+			]
+		},
+		"useRootPaddingAwareAlignments": true
+	},
+	"styles": {
+		"color": {
+			"background": "var:preset|color|base",
+			"text": "var:preset|color|contrast"
+		},
+		"spacing": {
+			"blockGap": "1.25rem",
+			"padding": {
+				"top": "0",
+				"right": "var:preset|spacing|30",
+				"bottom": "0",
+				"left": "var:preset|spacing|30"
+			}
+		},
+		"typography": {
+			"fontFamily": "var:preset|font-family|system",
+			"fontSize": "var:preset|font-size|medium",
+			"lineHeight": "1.6"
+		},
+		"elements": {
+			"link": {
+				"color": { "text": "var:preset|color|accent" },
+				"typography": { "textDecoration": "underline" }
+			},
+			"heading": {
+				"typography": { "fontWeight": "700", "lineHeight": "1.2" }
+			}
+		}
+	},
+	"templateParts": [
+		{ "name": "header", "title": "Header", "area": "header" },
+		{ "name": "footer", "title": "Footer", "area": "footer" }
+	]
+}

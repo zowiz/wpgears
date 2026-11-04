@@ -1,0 +1,53 @@
+/*
+Theme Name: WP Gears
+Theme URI: https://github.com/zowiz/wpgears
+Author: ZEUX
+Description: A lightweight, mobile-first WordPress block-theme starter for client projects.
+Version: 0.1.0
+Requires at least: 6.6
+Text Domain: wpgears
+License: GNU General Public License v2 or later
+License URI: https://www.gnu.org/licenses/old-licenses/gpl-2.0.html
+*/
+
+/*
+ * WP GEARS: KEEP THIS FILE SMALL.
+ * Put design tokens and most global styles in theme.json so they can be
+ * managed through the WordPress Site Editor. Keep only essential global
+ * CSS rules here.
+ */
+
+/* Predictable sizing makes responsive layouts easier to reason about. */
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+/* Images must not force the page wider than its content area. */
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+/* Keep keyboard focus visible for visitors navigating without a mouse. */
+:focus-visible {
+	outline: 2px solid currentColor;
+	outline-offset: 3px;
+}
+
+/* Respect the operating system's reduced-motion preference. */
+@media (prefers-reduced-motion: reduce) {
+	html:focus-within {
+		scroll-behavior: auto;
+	}
+
+	*,
+	*::before,
+	*::after {
+		scroll-behavior: auto !important;
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+	}
+}
