@@ -101,7 +101,7 @@ A block with no inner content can use a self-closing comment:
 
 The JSON attributes inside the comment are the block's settings. The HTML is its saved markup. Keep them consistent when editing templates manually.
 
-Comments beginning with `WP GEARS NOTE` are ordinary HTML comments for developers. They are not blocks and do not appear on the page.
+**Template comment rule:** keep only the special WordPress block-delimiter comments (the ones beginning with `wp:` or `/wp:`) inside `templates/*.html` and `parts/*.html`. Do not add ordinary explanatory HTML comments there. The Site Editor can treat those comments as unexpected content inside a block and mark the block invalid. Put developer explanations in this README instead.
 
 ## Why these references?
 
